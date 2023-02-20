@@ -8,6 +8,7 @@ class program
 {
   static void Main(string[] args)
   {
+    Console.Clear();
     Console.WriteLine("Enter a number:");
     int num = Convert.ToInt32(Console.ReadLine());
     int i = 1;
