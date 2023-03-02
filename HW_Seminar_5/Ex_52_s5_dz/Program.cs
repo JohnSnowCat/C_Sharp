@@ -3,9 +3,9 @@
 // [-4, -6, 89, 6] -> 0
 
 int size = GetLenArray();
-int[] ArrNUm = FillArray(MakeArray(size), size);
-int result = GetSumOddElem(ArrNUm, size);
-Console.WriteLine($"Сумма нечетных элементов массива {PrintArray(ArrNUm)} -> {result}");
+int[] arrnum = FillArray(MakeArray(size));
+int result = GetSumOddElem(arrnum);
+Console.WriteLine($"Сумма нечетных элементов массива {PrintArray(arrnum)} -> {result}");
 
 int GetLenArray()
 {
@@ -19,23 +19,23 @@ int[] MakeArray(int len)
   return (array);
 }
 
-int[] FillArray(int[] ar, int len)
+int[] FillArray(int[] ar)
 {
   Random rnd = new Random();
-  for (int i = 0; i < len; i++)
+  for (int i = 0; i < ar.Length; i++)
     ar[i] = rnd.Next(-21, 21);
   return (ar);
 }
 
-int GetSumOddElem(int[] Array, int len)
+int GetSumOddElem(int[] array)
 {
   int sum = 0;
-  for (int i = 1; i < len; i += 2)
-    sum = sum + Array[i];
+  for (int i = 1; i < array.Length; i += 2)
+    sum = sum + array[i];
   return (sum);
 }
 
-string PrintArray(int[] Array)
+string PrintArray(int[] array)
 {
-  return ($"[{string.Join(", ", Array)}]");
+  return ($"[{string.Join(", ", array)}]");
 }

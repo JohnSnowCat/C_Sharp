@@ -2,9 +2,9 @@
 // [3 7 22 2 78] -> 76
 
 int size = GetLenArray();
-double[] ArrNum = FillArray(MakeArray(size), size);
-double result = GetDifResult(GetMaxElem(ArrNum), GetMinElem(ArrNum));
-Console.WriteLine($"{PrintResult(ArrNum, result)}");
+double[] arrnum = FillArray(MakeArray(size));
+double result = GetDifResult(GetMaxElem(arrnum), GetMinElem(arrnum));
+Console.WriteLine($"{PrintResult(arrnum, result)}");
 
 int GetLenArray()
 {
@@ -18,10 +18,10 @@ double[] MakeArray(int len)
   return (array);
 }
 
-double[] FillArray(double[] ar, int len)
+double[] FillArray(double[] ar)
 {
   Random rnd = new Random();
-  for (int i = 0; i < len; i++)
+  for (int i = 0; i < ar.Length; i++)
     ar[i] = Math.Round(rnd.Next(-10, 11) * rnd.NextDouble(), 1);
   return (ar);
 }
@@ -46,7 +46,7 @@ double GetDifResult(double max, double min)
   return max - min;
 }
 
-string PrintResult(double[] Array, double res)
+string PrintResult(double[] array, double res)
 {
-  return ($"Разница между максимальным и минимальным элементами массива [{string.Join(", ", Array)}] -> {res}");
+  return ($"Разница между максимальным и минимальным элементами массива [{string.Join(", ", array)}] -> {res}");
 }
