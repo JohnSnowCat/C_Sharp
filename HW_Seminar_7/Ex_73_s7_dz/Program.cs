@@ -6,31 +6,33 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-// Console.WriteLine("enter the number of rows of the array ");
-// int rows = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("enter the number of columns of the array ");
-// int columns = Convert.ToInt32(Console.ReadLine());
-
 int[,] test = {{1, 4, 7, 2},{5, 9, 2, 3},{8, 4, 2, 4}};
 PrintArray(test);
 double[] res = GetAveregeColumns(test);
 Console.WriteLine($" {string.Join("; ", res)}");
 
-//PrintArray(MakeArray(rows, columns));
+Console.Write("enter the number of rows of the array ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("enter the number of columns of the array ");
+int columns = Convert.ToInt32(Console.ReadLine());
 
-// int[,] MakeArray(int m, int n)
-// {
-//   int[,] resultArray = new int[m,n];
-//   Random rnd = new Random();
-//   for (int i = 0; i < m; i++)
-//   {
-//     for (int j = 0; j < n; j++)
-//     {
-//       resultArray[i, j] = rnd.Next(-100, 100);
-//     }
-//   }
-//   return resultArray;
-// }
+int[,] newTestArray = MakeArray(rows, columns);
+PrintArray(newTestArray);
+Console.WriteLine($"{string.Join(", ", GetAveregeColumns(newTestArray))}");
+
+int[,] MakeArray(int m, int n)
+{
+  int[,] resultArray = new int[m,n];
+  Random rnd = new Random();
+  for (int i = 0; i < m; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      resultArray[i, j] = rnd.Next(-100, 100);
+    }
+  }
+  return resultArray;
+}
 
 double[] GetAveregeColumns(int[,] inputArray)
 {
