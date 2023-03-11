@@ -9,7 +9,7 @@ int[] Input()
   if (n <= 0)
   {
     Console.WriteLine("Вы ввели некорректное значение. Повторите ввод");
-    Input();
+    return Input();
   }
   int i = 0;
   int[] array = new int[n];
