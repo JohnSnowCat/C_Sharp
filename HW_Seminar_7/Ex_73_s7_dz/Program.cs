@@ -9,8 +9,9 @@
 int[,] test = {{1, 4, 7, 2},{5, 9, 2, 3},{8, 4, 2, 4}};
 PrintArray(test);
 double[] res = GetAveregeColumns(test);
-Console.WriteLine($" {string.Join("; ", res)}");
+Console.WriteLine($"{string.Join("\t", res)}");
 
+Console.WriteLine("Проведем дополнительный тест: ");
 Console.Write("enter the number of rows of the array ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("enter the number of columns of the array ");
