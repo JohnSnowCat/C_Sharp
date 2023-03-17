@@ -16,10 +16,20 @@ Console.WriteLine($"{GetGreatestCommonDivisor(inData.Item1, inData.Item2)}");
 
 int GetGreatestCommonDivisor(int m, int n)
 {
+  if (m == 0 || n == 0)
+    return (m + n);
   if (m > n)
-    GetGreatestCommonDivisor(n, m);
-  if (n % m == 0)
-    return m;
+    return GetGreatestCommonDivisor(m % n, n);
   else
-    return GetGreatestCommonDivisor(n % m, m);
+    return GetGreatestCommonDivisor(m, n % m);
 }
+
+// int GetGreatestCommonDivisor(int m, int n)
+// {
+//   if (m == 0 || n == 0)
+//     return m + n;
+//   if (m > n)
+//     return GetGreatestCommonDivisor(m - n, n);
+//   else
+//     return GetGreatestCommonDivisor(m, n - m);
+// }
